@@ -11,7 +11,8 @@ typedef enum
 {
 	P42A,
 	DG40,
-	VTC6
+	VTC6,
+	M35A
 } CELL_TYPE;
 
 //#define PINTV
@@ -24,7 +25,10 @@ typedef enum
 #if defined(GTV)
 #define   BATTERY_STRING			18
 #define   DEFAULT_CELL_TYPE			P42A
-#elif defined(PINTV) || defined(XRV)
+#elif defined(XRV)
+#define   BATTERY_STRING			15
+#define   DEFAULT_CELL_TYPE			M35A
+#elif defined(PINTV)
 #define   BATTERY_STRING			15
 #define   DEFAULT_CELL_TYPE			VTC6
 #elif defined(ADV)

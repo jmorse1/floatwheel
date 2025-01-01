@@ -189,7 +189,22 @@ static void WS2812_VESC(void)
 				WS2812_Set_AllColours(1, NUM_LEDS-2,WS2812_Measure,WS2812_Measure/2,0);
 			}
 			else if (data.dutyCycleNow > 70) {
-				WS2812_Set_AllColours(1, NUM_LEDS-3,WS2812_Measure/3,WS2812_Measure/3,0);
+				WS2812_Set_AllColours(1, NUM_LEDS-3,WS2812_Measure,WS2812_Measure/2,0);
+			}
+			else if (data.dutyCycleNow > 60) {
+				WS2812_Set_AllColours(1, NUM_LEDS-4,WS2812_Measure,WS2812_Measure/2,0);
+			}
+			else if (data.dutyCycleNow > 50) {
+				WS2812_Set_AllColours(1, NUM_LEDS-5,WS2812_Measure,WS2812_Measure/2,0);
+			}
+			else if (data.dutyCycleNow > 40) {
+				WS2812_Set_AllColours(1, NUM_LEDS-6,WS2812_Measure,WS2812_Measure/2,0);
+			}
+			else if (data.dutyCycleNow > 30) {
+				WS2812_Set_AllColours(1, NUM_LEDS-7,WS2812_Measure,WS2812_Measure/2,0);
+			}
+			else if (data.dutyCycleNow > 20) {
+				WS2812_Set_AllColours(1, NUM_LEDS-8,WS2812_Measure,WS2812_Measure/2,0);
 			}
 			else if (Power_Display_Flag > 6) {
 				// Voltage below 40%?
@@ -552,7 +567,8 @@ void Power_Task(void)
 
 void CheckPowerLevel(float battery_voltage)
 {
-	float battVoltages[10] = {4.054, 4.01, 3.908, 3.827, 3.74, 3.651, 3.571, 3.485, 3.38, 3.0}; //P42A
+	float battVoltages[10] = {4.15, 4.02, 3.93, 3.83, 3.72, 3.64, 3.56, 3.45, 3.314, 3.029}; //M35A CBXR
+	//float battVoltages[10] = {4.054, 4.01, 3.908, 3.827, 3.74, 3.651, 3.571, 3.485, 3.38, 3.0}; //P42A
 	//float battVoltages[10] = {4.07, 4.025, 3.91, 3.834, 3.746, 3.607, 3.49, 3.351, 3.168, 2.81}; //DG40
 	//float battVoltages[10] = { 4.1, 4.00, 3.9, 3.8, 3.7, 3.6, 3.5, 3.4, 3.3, 3.1 }; // Sony VTC6
 	//float battcellcurve[10] = {4.054, 4.01, 3.908, 3.827, 3.74, 3.651, 3.571, 3.485, 3.38, 3.0};   //P42A
